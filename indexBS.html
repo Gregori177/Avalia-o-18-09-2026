@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco SENAI - Simulador de Empréstimo</title>
+    <link rel="stylesheet" href="/banco.css">
+    <script src="/banco.js" defer></script>
+</head>
+
+<body>
+
+    <div class="container" id="appContainer">
+        <h2>Simulador de Empréstimo - Banco SENAI</h2>
+
+        <form id="loanForm">
+            <div class="form-group">
+                <label for="clientName">Nome Completo (Mín. 5 caracteres):</label><br>
+                <input type="text" id="clientName" required><br><br>
+            </div>
+
+            <div class="form-group">
+                <label for="birthDate">Data de Nascimento:</label><br>   
+                <input type="date" id="birthDate" required><br><br>
+
+            </div>
+
+            <div class="form-group">
+                <label for="clientCPF">CPF (Apenas 11 números):</label><br>
+                <input type="text" id="clientCPF" required><br><br>
+
+            </div>
+
+            <div class="form-group">
+                <label for="loanAmount">Valor do Empréstimo (R$):</label><br>
+                <input type="number" id="loanAmount" step="0.01" required><br><br>
+            </div>
+
+            <div class="form-group">
+                <label for="interestRate">Taxa de Juros Simples (%):</label><br>
+                <input type="number" id="interestRate" step="0.1" required><br><br>
+            </div>
+
+            <div class="form-group">
+                <label for="installments">Quantidade de Parcelas:</label><br>
+                <input type="number" id="installments"><br><br>
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="btnCalculate">Calcular Empréstimo</button>
+        </form>
+
+        <div class="result-box" id="resultBox">
+            <h3>Resumo da Simulação</h3>
+            <p><strong>Idade Calculada:</strong> <span id="resAge"></span> anos</p>
+            <p><strong>Montante Total com Juros:</strong> R$ <span id="resTotalAmount"></span></p>
+            <button class="btn btn-danger" id="btnReset"onclick="testar()">Nova Simulação</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
